@@ -1,0 +1,130 @@
+
+*{
+  user-select: none; 
+}
+
+body{
+    width: 98vw;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    position: relative;
+    width: 400px;
+    height: 320px;
+}
+.wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    height: 80px;
+    transition: 0.2s;
+    /* background-color: black; */
+}
+.wrap:hover{
+    background: #eee;
+}
+.icon{
+    display: block;
+    /* transform: translateY(2px); */
+    font-size: 20px;
+}
+#volume,#brightness{
+    width: 260px;
+    height: 8px;
+    border-radius: 8px;
+    -webkit-appearance: none;
+    background: #ddd;
+}
+#volume::-webkit-slider-thumb,#brightness::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: #ccc 1px solid;
+    background: #fff;
+    z-index: 1;
+}
+.progress{
+    height: 10px;
+    background: rgb(43, 255, 0);
+    position: absolute;
+    left: 30px;
+    z-index: 0;
+    border-radius: 5px;
+    
+}
+#progressVolume{
+    width: calc(260px* var(--value) / 100);
+}
+#progressBright{
+    width: calc(260px* var(--value) / 100);
+}
+.label{
+    display: block;
+    width: 100px;
+}
+.wrap-wifi .label,
+.wrap-bluetooth .label{
+    margin-left: 60px;
+}
+.wifiIcon,
+.bluetoothIcon{
+    margin-right: 20px;
+}
+.wifiCheckbox,
+.bluetoothCheckbox{
+    position: relative;
+}
+#wifiCheckbox,
+#bluetoothCheckbox{
+    position: absolute;
+    -webkit-appearance: none; 
+    display: none;
+    visibility: hidden;
+}
+.check-wifi,
+.check-bluetooth{
+    position: relative;
+    display: block;
+    width: 48px;
+    height: 24px;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: ease-in 0.1s;
+}
+#wifiCheckbox:checked ~ .check-wifi{
+    background: rgb(7, 194, 85);
+}
+.check-wifi::before,
+.check-bluetooth::before{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    background:#fff;
+    border: #ccc;
+    transition: ease-in 0.1s;
+}
+#wifiCheckbox:checked ~ .check-wifi::before{
+    transform: translateX(24px);
+}
+#bluetoothCheckbox:checked ~ .check-bluetooth{
+    background: rgb(7, 194, 85);
+}
+#bluetoothCheckbox:checked ~ .check-bluetooth::before{
+    transform: translateX(24px);
+}
+.btnDisable{
+    color: #aaa;
+}
