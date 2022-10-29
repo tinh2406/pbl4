@@ -9,13 +9,13 @@
     <div class="container">
       <div class="wrap wrap-volume">
         <i class="icon volumeIcon"><img id="volumeIcon" src="./source/volume-mute-outline.svg" width="22" height="22"></i>
-        <input type="range" id="volume" name="volume" min="0" max="100" step="1" >
+        <input type="range" id="volume" name="volume" min="0" max="100" step="1" oninput="volumeOnInput" >
         <div class="label"><h4>Volume</h4></div>
         <div class="progress" id="progressVolume" style="--value:0"></div>
       </div>
       <div class="wrap wrap-brightness">
         <i class="icon brightnessIcon"><img id="brightnessIcon" src="./source/sunny-outline.svg" width="22" height="22"></i>
-        <input type="range" id="brightness" name="brightness" min="0" max="100" >
+        <input type="range" id="brightness" name="brightness" min="0" max="100" oninput="brightOnInput">
         <div class="label"><h4>Brightness</h4></div>
         <div class="progress" id="progressBright" style="--value:0"></div>
       </div>
@@ -47,10 +47,10 @@
       </div>
     </div>
   </div>
-    
-    <script src="./script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="execshell.js"></script>
+  <!-- <script type="module" src="execshell.js"></script> -->
+  <script type="module" src="./script.js"></script>
+  <script type="module" src="./execshell.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
 </html>
