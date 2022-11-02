@@ -1,4 +1,4 @@
-import { getStateBluetooth, getStateWifi, turnOffBluetooth, turnOffWifi, turnOnBluetooth, turnOnWifi } from './execshell.js';
+import { getStateBluetooth, getStateWifi, getValueVolume, setValueVolum, turnOffBluetooth, turnOffWifi, turnOnBluetooth, turnOnWifi,login, getValueBright, setValueBright } from './execshell.js';
 
 const volume = document.getElementById("volume");
 const brightness = document.getElementById("brightness");
@@ -7,7 +7,6 @@ const wrapBluetooth = document.getElementsByClassName("wrap-bluetooth")[0];
 const bluetoothCheckbox = document.getElementById("bluetoothCheckbox");
 const wrapWifi = document.getElementsByClassName("wrap-wifi")[0];
 const wifiCheckbox = document.getElementById("wifiCheckbox");
-  
   volume.oninput = ()=>{
     document.getElementById("progressVolume").setAttribute("style","--value:"+volume.value);
     if(volume.value>=90){
@@ -22,9 +21,11 @@ const wifiCheckbox = document.getElementById("wifiCheckbox");
     else {
       volumeIcon.setAttribute("src","./source/volume-mute-outline.svg")
     }
+    setValueVolum(volume.value);
   }
   brightness.oninput = ()=>{
-    document.getElementById("progressBright").setAttribute("style","--value:"+brightness.value);
+    document.getElementById("progressBright").setAttribute("style", "--value:" + brightness.value);
+    setValueBright(brightness.value);
   }
   bluetoothCheckbox.onchange = function(){
     if (bluetoothCheckbox.checked == true) {
@@ -50,8 +51,11 @@ const wifiCheckbox = document.getElementById("wifiCheckbox");
   wrapBluetooth.onclick = function(){
     bluetoothCheckbox.checked = !bluetoothCheckbox.checked;
   }
-  window.onload = function () {
-    console.log(getStateBluetooth());
+window.onload = function () {
+  const password = "68709502";
+  login(password);
+  volume.value = getValueVolume();
+  brightness.value = getValueBright();
     wifiCheckbox.checked = getStateWifi();
     bluetoothCheckbox.checked = getStateBluetooth();
     brightness.oninput();
