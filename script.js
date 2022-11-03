@@ -45,24 +45,36 @@ const wifiCheckbox = document.getElementById("wifiCheckbox");
       wrapWifi.classList.add("btnDisable");
     }
   }
-  wrapWifi.onclick = function(){
-    wifiCheckbox.checked = !wifiCheckbox.checked;
-  }
-  wrapBluetooth.onclick = function(){
-    bluetoothCheckbox.checked = !bluetoothCheckbox.checked;
-  }
+wrapWifi.onclick = function () {  
+  wifiCheckbox.checked = !wifiCheckbox.checked;
+  wifiCheckbox.onchange();
+}
+wrapBluetooth.onclick = function(){
+  bluetoothCheckbox.checked = !bluetoothCheckbox.checked;
+  bluetoothCheckbox.onchange();
+}
 window.onload = function () {
   const password = "68709502";
   login(password);
-  volume.value = getValueVolume();
-  brightness.value = getValueBright();
-    wifiCheckbox.checked = getStateWifi();
+  }
+  
+    
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function demo() {
+  while (true) {
+    volume.value = getValueVolume();
     bluetoothCheckbox.checked = getStateBluetooth();
+    brightness.value = getValueBright();
+    wifiCheckbox.checked = getStateWifi();
     brightness.oninput();
     volume.oninput();
     bluetoothCheckbox.onchange();
     wifiCheckbox.onchange();
-  }
-  
-    
-    
+    await sleep(1);
+    }
+}
+
+demo();
