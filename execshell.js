@@ -18,21 +18,21 @@ export const turnOffWifi = ()=>{
     execSync("nmcli radio wifi off")
 }
 export const setValueVolum = (value) => {
-    execSync("amixer -D pulse sset Master " + value + "%");
+    execSync("amixer -D pulse sset Master " + value/2 + "%");
 }
 export const setValueBright = (value) => {
     const max = execSync("cat /sys/class/backlight/intel_backlight/max_brightness", { encoding: "utf-8" });
-    execSync("echo "+ value*Number.parseInt(max)/100 +" | sudo tee /sys/class/backlight/intel_backlight/brightness");
+    execSync("echo "+ Number.parseInt(value*max/200) +" | sudo tee /sys/class/backlight/intel_backlight/brightness");
 }
 
 export const getValueVolume = () => {
     const output = execSync("amixer -D pulse sget Master",{encoding: 'utf-8' });
-    return output.split("[")[1].split("%")[0];
+    return output.split("[")[1].split("%")[0]*2;
 }
 export const getValueBright = () => {
     const max = execSync("cat /sys/class/backlight/intel_backlight/max_brightness", { encoding: "utf-8" });
     const current = execSync("cat /sys/class/backlight/intel_backlight/brightness", { encoding: "utf-8" });
-    return current / max*100;
+    return current / max*200;
 }
 export const getStateBluetooth = () => {
     const output = execSync("rfkill list bluetooth",{encoding: 'utf-8' });

@@ -7,49 +7,134 @@
   </head>
   <body > 
     <div class="container">
-      <div class="wrap wrap-volume">
-        <i class="icon volumeIcon"><img id="volumeIcon" src="./source/volume-mute-outline.svg" width="22" height="22"></i>
-        <input type="range" id="volume" name="volume" min="0" max="100" step="1" oninput="volumeOnInput" >
-        <div class="label"><h4>Volume</h4></div>
-        <div class="progress" id="progressVolume" style="--value:0"></div>
-      </div>
-      <div class="wrap wrap-brightness">
-        <i class="icon brightnessIcon"><img id="brightnessIcon" src="./source/sunny-outline.svg" width="22" height="22"></i>
-        <input type="range" id="brightness" name="brightness" min="0" max="100" oninput="brightOnInput">
-        <div class="label"><h4>Brightness</h4></div>
-        <div class="progress" id="progressBright" style="--value:0"></div>
-      </div>
-      <div class="wrap wrap-wifi">
-        <div class="label"><h4>Wifi</h4></div>
-        <div style="display: flex;width: 150px;">
-          <i class="icon wifiIcon">
-            <ion-icon id="wifiIcon" name="wifi-outline" width="22" height="22"></ion-icon>
-            <!-- <img id="wifiIcon" src="./source/wifi-outline.svg" width="22" height="22"> -->
-          </i>
-          <div class="wifiCheckBox">
-            <input type="checkbox" id="wifiCheckbox">
-            <label class="check-wifi" for="wifiCheckbox"></label>
+      <div>
+        <div class="wrap wrap-large">
+          <div class="wrap-range wrap-volume">
+            <i class="icon" >
+              <ion-icon class="volumeIcon" name="volume-mute-outline" width="30" height="30"></ion-icon>
+  
+            </i>
+            <div class="div">
+              <input type="range" class="range" id="volume" name="volume" min="0" max="200">
+              <div class="progress" id="progressVolume" style="--value:10"></div>
+            </div>
+          </div>
+          <div class="wrap-range wrap-brightness">
+            <i class="icon brightnessIcon">
+              <ion-icon id="brightnessIcon" name="sunny" width="30" height="30"></ion-icon>
+            </i>
+            <div class="div">
+              <input type="range" class="range" id="brightness" name="brightness" min="0" max="200">
+              <div class="progress" id="progressBright" style="--value:10"></div>
+            </div>
           </div>
         </div>
+        <div class="wrap wrap-sleep">
+          <i class="wrap-icon sleepIcon">
+            <ion-icon name="moon-outline"></ion-icon>
+          </i>
+          <span class="btn-circle-out"></span>
+          <span class="btn-circle-in"></span>
+        </div>
+        <div class="wrap wrap-lock">
+          <i class="wrap-icon lockIcon">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+          </i>
+          <span class="btn-circle-out"></span>
+          <span class="btn-circle-in"></span>
+        </div>
+      </div>
+    <div>
+      <div class="wrap wrap-wifi">
+        <i class="wrap-icon wifiIcon">
+          <ion-icon id="wifiIcon" name="wifi-outline"></ion-icon>
+        </i>
+        <div class="wrap-checkbox wifiCheckBox">
+          <input type="checkbox" id="wifiCheckbox">
+          <label class="check-wifi" for="wifiCheckbox"></label>
+        </div>
+        <span class="btn-circle-out"></span>
+        <span class="btn-circle-in"></span>
       </div>
       <div class="wrap wrap-bluetooth">
-        <div class="label"><h4>Bluetooth</h4></div>
-        <div style="display: flex;width: 150px;">
-          <i class="icon bluetoothIcon">
-            <ion-icon id="luetoothIcon" name="bluetooth-outline" width="22" height="22"></ion-icon>
-            <!-- <img id="luetoothIcon" src="./source/bluetooth-outline.svg" width="22" height="22"> -->
-          </i>
-          <div class="bluetoothCheckBox">
-            <input type="checkbox" id="bluetoothCheckbox">
-            <label class="check-bluetooth" for="bluetoothCheckbox"></label>
-          </div>
+        <i class="wrap-icon bluetoothIcon">
+          <ion-icon id="bluetoothIcon" name="bluetooth-outline"></ion-icon>
+        </i>
+        <div class="wrap-checkbox bluetoothCheckBox">
+          <input type="checkbox" id="bluetoothCheckbox">
+          <label class="check-bluetooth" for="bluetoothCheckbox"></label>
+        </div>
+        <span class="btn-circle-out"></span>
+        <span class="btn-circle-in"></span>
+      </div>
+      <div class="wrap wrap-lock">
+        <i class="wrap-icon lockIcon">
+          <ion-icon name="power-outline"></ion-icon>
+        </i>
+        <span class="btn-circle-out"></span>
+        <span class="btn-circle-in"></span>
+      </div>
+    <div class="wrap wrap-battery">
+      <i class="wrap-icon batteryIcon">
+        <ion-icon name="battery-full-outline"></ion-icon>
+      </i>
+      <div>
+        <svg class="battery" style="--value:50">
+          <circle cx="50%" cy="50%" r="50%" />
+        </svg>
+      </div>
+      <span class="btn-circle-in"></span>
+    </div>
+    </div>
+    </div>
+  </div>
+  <div>
+    <div class="wrap wrap-webcam">
+      <i class="wrap-icon webcamIcon">
+        <ion-icon name="camera-outline"></ion-icon>
+      </i>
+      <div class="wrap-checkbox webcamCheckBox">
+        <input type="checkbox" id="webcamCheckbox">
+        <label class="check-webcam" for="webcamCheckbox"></label>
+      </div>
+      <span class="btn-circle-out"></span>
+      <span class="btn-circle-in"></span>
+    </div>
+    <div class="wrap wrap-planemode">
+      <i class="wrap-icon planemodeIcon">
+        <ion-icon name="airplane-outline"></ion-icon>
+      </i>
+      <div class="wrap-checkbox planemodeCheckBox">
+        <input type="checkbox" id="planemodeCheckbox">
+        <label class="check-planemode" for="planemodeCheckbox"></label>
+      </div>
+      <span class="btn-circle-out"></span>
+      <span class="btn-circle-in"></span>
+    </div>
+    <div class="wrap wrap-large">
+      <div class="wrap-range wrap-perform">
+        <div class="wrap-perform-label">
+          <div class="highmode">Hiệu năng</div>
+          <div class="balance">Cân bằng</div>
+          <div class="power">Tiết kiệm</div>
+        </div>
+      </div>
+      <div class="wrap-range wrap-perform">
+          <div class="div">
+          <ion-icon id="highmode" name="reorder-three-outline"></ion-icon>
+          <ion-icon id="balance" name="reorder-two-outline"></ion-icon>
+          <ion-icon id="power" name="remove-outline"></ion-icon>
+          <input type="range" id="perform" min="0" max="2">
         </div>
       </div>
     </div>
   </div>
-  <!-- <script type="module" src="execshell.js"></script> -->
   <script type="module" src="./script.js"></script>
   <script type="module" src="./execshell.js"></script>
+  <script>
+    
+    // changeInputRange(perform,document.getElementsByClassName("div")[2]);
+  </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
