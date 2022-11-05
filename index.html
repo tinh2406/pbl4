@@ -7,6 +7,10 @@
   </head>
   <body > 
     <div class="container">
+      <div class="wrap-checkbox darkCheckBox">
+        <input type="checkbox" checked id="darkCheckbox">
+        <label class="check-dark" for="darkCheckbox"></label>
+      </div>
       <div>
         <div class="wrap wrap-large">
           <div class="wrap-range wrap-volume">
@@ -44,98 +48,111 @@
           <span class="btn-circle-in"></span>
         </div>
       </div>
-    <div>
-      <div class="wrap wrap-wifi">
-        <i class="wrap-icon wifiIcon">
-          <ion-icon id="wifiIcon" name="wifi-outline"></ion-icon>
-        </i>
-        <div class="wrap-checkbox wifiCheckBox">
-          <input type="checkbox" id="wifiCheckbox">
-          <label class="check-wifi" for="wifiCheckbox"></label>
-        </div>
-        <span class="btn-circle-out"></span>
-        <span class="btn-circle-in"></span>
-      </div>
-      <div class="wrap wrap-bluetooth">
-        <i class="wrap-icon bluetoothIcon">
-          <ion-icon id="bluetoothIcon" name="bluetooth-outline"></ion-icon>
-        </i>
-        <div class="wrap-checkbox bluetoothCheckBox">
-          <input type="checkbox" id="bluetoothCheckbox">
-          <label class="check-bluetooth" for="bluetoothCheckbox"></label>
-        </div>
-        <span class="btn-circle-out"></span>
-        <span class="btn-circle-in"></span>
-      </div>
-      <div class="wrap wrap-lock">
-        <i class="wrap-icon lockIcon">
-          <ion-icon name="power-outline"></ion-icon>
-        </i>
-        <span class="btn-circle-out"></span>
-        <span class="btn-circle-in"></span>
-      </div>
-    <div class="wrap wrap-battery">
-      <i class="wrap-icon batteryIcon">
-        <ion-icon name="battery-full-outline"></ion-icon>
-      </i>
       <div>
-        <svg class="battery" style="--value:50">
-          <circle cx="50%" cy="50%" r="50%" />
-        </svg>
-      </div>
-      <span class="btn-circle-in"></span>
-    </div>
-    </div>
-    </div>
-  </div>
-  <div>
-    <div class="wrap wrap-webcam">
-      <i class="wrap-icon webcamIcon">
-        <ion-icon name="camera-outline"></ion-icon>
-      </i>
-      <div class="wrap-checkbox webcamCheckBox">
-        <input type="checkbox" id="webcamCheckbox">
-        <label class="check-webcam" for="webcamCheckbox"></label>
-      </div>
-      <span class="btn-circle-out"></span>
-      <span class="btn-circle-in"></span>
-    </div>
-    <div class="wrap wrap-planemode">
-      <i class="wrap-icon planemodeIcon">
-        <ion-icon name="airplane-outline"></ion-icon>
-      </i>
-      <div class="wrap-checkbox planemodeCheckBox">
-        <input type="checkbox" id="planemodeCheckbox">
-        <label class="check-planemode" for="planemodeCheckbox"></label>
-      </div>
-      <span class="btn-circle-out"></span>
-      <span class="btn-circle-in"></span>
-    </div>
-    <div class="wrap wrap-large">
-      <div class="wrap-range wrap-perform">
-        <div class="wrap-perform-label">
-          <div class="highmode">Hiệu năng</div>
-          <div class="balance">Cân bằng</div>
-          <div class="power">Tiết kiệm</div>
+        <div class="wrap wrap-wifi">
+          <i class="wrap-icon wifiIcon">
+            <ion-icon id="wifiIcon" name="wifi-outline"></ion-icon>
+          </i>
+          <div class="wrap-checkbox wifiCheckBox">
+            <input type="checkbox" id="wifiCheckbox">
+            <label class="check-wifi" for="wifiCheckbox"></label>
+          </div>
+          <span class="btn-circle-out"></span>
+          <span class="btn-circle-in"></span>
+        </div>
+        <div class="wrap wrap-bluetooth">
+          <i class="wrap-icon bluetoothIcon">
+            <ion-icon id="bluetoothIcon" name="bluetooth-outline"></ion-icon>
+          </i>
+          <div class="wrap-checkbox bluetoothCheckBox">
+            <input type="checkbox" id="bluetoothCheckbox">
+            <label class="check-bluetooth" for="bluetoothCheckbox"></label>
+          </div>
+          <span class="btn-circle-out"></span>
+          <span class="btn-circle-in"></span>
+        </div>
+        <div class="wrap wrap-lock">
+          <i class="wrap-icon lockIcon">
+            <ion-icon name="power-outline"></ion-icon>
+          </i>
+          <span class="btn-circle-out"></span>
+          <span class="btn-circle-in"></span>
+        </div>
+        <div class="wrap wrap-battery">
+          <i class="wrap-icon batteryIcon">
+            <ion-icon name="battery-full-outline"></ion-icon>
+          </i>
+          <div>
+            <svg class="battery" style="--value:50">
+              <circle cx="50%" cy="50%" r="50%" />
+            </svg>
+          </div>
+          <span class="btn-circle-in"></span>
         </div>
       </div>
-      <div class="wrap-range wrap-perform">
-          <div class="div">
-          <ion-icon id="highmode" name="reorder-three-outline"></ion-icon>
-          <ion-icon id="balance" name="reorder-two-outline"></ion-icon>
-          <ion-icon id="power" name="remove-outline"></ion-icon>
-          <input type="range" id="perform" min="0" max="2">
+      <div>
+        <div class="wrap wrap-webcam">
+          <i class="wrap-icon webcamIcon">
+            <ion-icon name="camera-outline"></ion-icon>
+          </i>
+          <div class="wrap-checkbox webcamCheckBox">
+            <input type="checkbox" id="webcamCheckbox">
+            <label class="check-webcam" for="webcamCheckbox"></label>
+          </div>
+          <span class="btn-circle-out"></span>
+          <span class="btn-circle-in"></span>
+        </div>
+        <div class="wrap wrap-planemode">
+          <i class="wrap-icon planemodeIcon">
+            <ion-icon name="airplane-outline"></ion-icon>
+          </i>
+          <div class="wrap-checkbox planemodeCheckBox">
+            <input type="checkbox" id="planemodeCheckbox">
+            <label class="check-planemode" for="planemodeCheckbox"></label>
+          </div>
+          <span class="btn-circle-out"></span>
+          <span class="btn-circle-in"></span>
+        </div>
+        <div class="wrap wrap-large">
+          <div class="wrap-range wrap-perform">
+            <div class="wrap-perform-label">
+              <div class="highmode">Hiệu năng</div>
+              <div class="balance">Cân bằng</div>
+              <div class="power">Tiết kiệm</div>
+            </div>
+          </div>
+          <div class="wrap-range wrap-perform">
+            <div class="div">
+              <ion-icon id="highmode" name="reorder-three-outline"></ion-icon>
+              <ion-icon id="balance" name="reorder-two-outline"></ion-icon>
+              <ion-icon id="power" name="remove-outline"></ion-icon>
+              <input type="range" id="perform" min="0" max="2">
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <script type="module" src="./script.js"></script>
-  <script type="module" src="./execshell.js"></script>
-  <script>
-    
-    // changeInputRange(perform,document.getElementsByClassName("div")[2]);
-  </script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./execshell.js"></script>
+    <script>
+      const darkCheckbox = document.getElementById("darkCheckbox");
+      const r = document.querySelector(':root');
+      const rs = getComputedStyle(r);
+      darkCheckbox.onchange = ()=>{
+        if(darkCheckbox.checked){
+          r.style.setProperty('--background-color',rs.getPropertyValue('--dark-background'));
+          r.style.setProperty('--background-hover', rs.getPropertyValue('--dark-background-hover'));
+          r.style.setProperty('--text-color', rs.getPropertyValue('--dark-colortext'));
+        }
+        else{
+          r.style.setProperty('--background-color', rs.getPropertyValue('--light-background'));
+          r.style.setProperty('--background-hover', rs.getPropertyValue('--light-background-hover'));
+          r.style.setProperty('--text-color', rs.getPropertyValue('--light-colortext'));
+        }
+      }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

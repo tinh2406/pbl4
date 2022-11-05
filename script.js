@@ -42,16 +42,16 @@ const changeInputRange = (element,progressElement)=>{
 volume.oninput = () => {
   document.getElementById("progressVolume").setAttribute("style", "--value:" + volume.value);
   if(volume.value>=90){
-    volumeIcon.setAttribute("name","volume-high-outline.svg")
+    volumeIcon.setAttribute("name","volume-high-outline")
   }
   else if(volume.value>=50){
-    volumeIcon.setAttribute("name","volume-medium-outline.svg")
+    volumeIcon.setAttribute("name","volume-medium-outline")
   }
   else if(volume.value>0){
-    volumeIcon.setAttribute("name","volume-low-outline.svg")
+    volumeIcon.setAttribute("name","volume-low-outline")
   }
   else {
-    volumeIcon.setAttribute("name","volume-mute-outline.svg")
+    volumeIcon.setAttribute("name","volume-mute-outline")
   }
   setValueVolum(volume.value);
 }

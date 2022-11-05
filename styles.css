@@ -7,11 +7,11 @@
     --light-background-hover:rgb(219, 219, 219);
     --light-colortext: var(--dark-background);
     --color-battery-warming:rgb(175, 114, 0);
-
-    --background-color: var(--light-background);
-    --background-hover:var(--light-background-hover);
-    --text-color:var(--light-colortext);
     --color-battery:var(--dark-colortext-on);
+
+    --background-color: var(--dark-background);
+    --background-hover:var(--dark-background-hover);
+    --text-color:var(--dark-colortext);
 }
 *{
   user-select: none; 
@@ -56,6 +56,7 @@ body{
 }
 .wrap:hover,
 .wrap:hover .btn-circle-in{
+    transition: 0;
     background: var(--background-hover);
 }
 .wrap-large:hover{
@@ -136,12 +137,19 @@ body{
     position: absolute;
     z-index: 1;
     bottom: 56px;
+    font-size: 24px;
+    color: var(--background-color);
+}
+.highmode,.balance,.power{
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: bold;
 }
 #highmode{
     top: 0px;
     position: absolute;
     z-index: 1;
-    color: aliceblue;
+    color: var(--text-color);
     transform: translateY(20%);
     font-size: 24px;
 }
@@ -276,7 +284,8 @@ body{
 #wifiCheckbox:checked ~ .check-wifi::before,
 #bluetoothCheckbox:checked~.check-bluetooth::before,
 #webcamCheckbox:checked~.check-webcam::before,
-#planemodeCheckbox:checked~.check-planemode::before {
+#planemodeCheckbox:checked~.check-planemode::before,
+#darkCheckbox:checked~.check-dark::before {
     transform: translateX(24px);
 }
 .battery{
@@ -299,15 +308,8 @@ body{
     stroke-dasharray: 440;
     stroke-dashoffset: calc(440 - (402 * var(--value))/100);
 }
-/* .battery::before{
+.darkCheckBox{
     position: absolute;
-    content: "";
-    background: green;
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
-    z-index: 100;
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-
-} */
+    top: -20px;
+    right: 15px;
+}
