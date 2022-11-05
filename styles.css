@@ -30,8 +30,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 400px; */
-    /* height: 320px; */
 }
 .wrap{
     position: relative;
@@ -277,6 +275,8 @@ body{
 #wifiCheckbox:checked~.check-wifi,
 #bluetoothCheckbox:checked~.check-bluetooth,
 #webcamCheckbox:checked~.check-webcam,
+#microCheckbox:checked~.check-micro,
+#keypadCheckbox:checked~.check-keypad,
 #planemodeCheckbox:checked~.check-planemode{
     background: var(--dark-colortext-on);
     color: var(--dark-colortext-on);
@@ -284,6 +284,8 @@ body{
 #wifiCheckbox:checked ~ .check-wifi::before,
 #bluetoothCheckbox:checked~.check-bluetooth::before,
 #webcamCheckbox:checked~.check-webcam::before,
+#microCheckbox:checked~.check-micro::before,
+#keypadCheckbox:checked~.check-keypad::before,
 #planemodeCheckbox:checked~.check-planemode::before,
 #darkCheckbox:checked~.check-dark::before {
     transform: translateX(24px);
@@ -312,4 +314,11 @@ body{
     position: absolute;
     top: -20px;
     right: 15px;
+}
+#volumeCover,#brightCover{
+    position: absolute;
+    height: 240px;
+    width: 48px;
+    background: transparent;
+    z-index: 10;
 }

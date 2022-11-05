@@ -7,11 +7,12 @@
   </head>
   <body > 
     <div class="container">
+
       <div class="wrap-checkbox darkCheckBox">
         <input type="checkbox" checked id="darkCheckbox">
         <label class="check-dark" for="darkCheckbox"></label>
       </div>
-      <div>
+      <div> 
         <div class="wrap wrap-large">
           <div class="wrap-range wrap-volume">
             <i class="icon" >
@@ -22,6 +23,7 @@
               <input type="range" class="range" id="volume" name="volume" min="0" max="200">
               <div class="progress" id="progressVolume" style="--value:10"></div>
             </div>
+            <div id="volumeCover"></div>
           </div>
           <div class="wrap-range wrap-brightness">
             <i class="icon brightnessIcon">
@@ -31,6 +33,7 @@
               <input type="range" class="range" id="brightness" name="brightness" min="0" max="200">
               <div class="progress" id="progressBright" style="--value:10"></div>
             </div>
+            <div id="brightCover"></div>
           </div>
         </div>
         <div class="wrap wrap-sleep">
@@ -44,6 +47,17 @@
           <i class="wrap-icon lockIcon">
             <ion-icon name="lock-closed-outline"></ion-icon>
           </i>
+          <span class="btn-circle-out"></span>
+          <span class="btn-circle-in"></span>
+        </div>
+        <div class="wrap wrap-micro">
+          <i class="wrap-icon microIcon">
+            <ion-icon name="mic-outline"></ion-icon>
+          </i>
+          <div class="wrap-checkbox microCheckBox">
+            <input type="checkbox" id="microCheckbox">
+            <label class="check-micro" for="microCheckbox"></label>
+          </div>
           <span class="btn-circle-out"></span>
           <span class="btn-circle-in"></span>
         </div>
@@ -78,19 +92,15 @@
           <span class="btn-circle-out"></span>
           <span class="btn-circle-in"></span>
         </div>
-        <div class="wrap wrap-battery">
-          <i class="wrap-icon batteryIcon">
-            <ion-icon name="battery-full-outline"></ion-icon>
+        <div class="wrap wrap-restart">
+          <i class="wrap-icon restartIcon">
+            <!-- <ion-icon name="-outline"></ion-icon> -->
+            <!-- RESTART -->
+            <ion-icon  name="reload-outline"></ion-icon>
           </i>
-          <div>
-            <svg class="battery" style="--value:50">
-              <circle cx="50%" cy="50%" r="50%" />
-            </svg>
-          </div>
+          <span class="btn-circle-out"></span>
           <span class="btn-circle-in"></span>
         </div>
-      </div>
-      <div>
         <div class="wrap wrap-webcam">
           <i class="wrap-icon webcamIcon">
             <ion-icon name="camera-outline"></ion-icon>
@@ -102,6 +112,8 @@
           <span class="btn-circle-out"></span>
           <span class="btn-circle-in"></span>
         </div>
+      </div>
+      <div>
         <div class="wrap wrap-planemode">
           <i class="wrap-icon planemodeIcon">
             <ion-icon name="airplane-outline"></ion-icon>
@@ -111,6 +123,17 @@
             <label class="check-planemode" for="planemodeCheckbox"></label>
           </div>
           <span class="btn-circle-out"></span>
+          <span class="btn-circle-in"></span>
+        </div>
+        <div class="wrap wrap-battery">
+          <i class="wrap-icon batteryIcon">
+            <ion-icon name="battery-full-outline"></ion-icon>
+          </i>
+          <div>
+            <svg class="battery" style="--value:50">
+              <circle cx="50%" cy="50%" r="50%" />
+            </svg>
+          </div>
           <span class="btn-circle-in"></span>
         </div>
         <div class="wrap wrap-large">
@@ -129,6 +152,17 @@
               <input type="range" id="perform" min="0" max="2">
             </div>
           </div>
+        </div>
+        <div class="wrap wrap-keypad">
+          <i class="wrap-icon keypadIcon">
+            <ion-icon id="keypadIcon" name="keypad-outline"></ion-icon>
+          </i>
+          <div class="wrap-checkbox keypadCheckBox">
+            <input type="checkbox" id="keypadCheckbox">
+            <label class="check-keypad" for="keypadCheckbox"></label>
+          </div>
+          <span class="btn-circle-out"></span>
+          <span class="btn-circle-in"></span>
         </div>
       </div>
     </div>

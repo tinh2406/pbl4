@@ -7,6 +7,10 @@ const wrapBluetooth = document.getElementsByClassName("wrap-bluetooth")[0];
 const bluetoothCheckbox = document.getElementById("bluetoothCheckbox");
 const wrapWifi = document.getElementsByClassName("wrap-wifi")[0];
 const wifiCheckbox = document.getElementById("wifiCheckbox");
+const wrapMicro = document.getElementsByClassName("wrap-micro")[0];
+const microCheckbox = document.getElementById("microCheckbox");
+const wrapKeypad = document.getElementsByClassName("wrap-keypad")[0];
+const keypadCheckbox = document.getElementById("keypadCheckbox");
 const progressVolume = document.getElementById("progressVolume");
 const progressBright = document.getElementById("progressBright");
 const progressPerform = document.getElementById("progressPerform");
@@ -14,8 +18,8 @@ const wrapWebcam = document.getElementsByClassName("wrap-webcam")[0];
 const webcamCheckbox = document.getElementById("webcamCheckbox");
 const wrapPlanemode = document.getElementsByClassName("wrap-planemode")[0];
 const planemodeCheckbox = document.getElementById("planemodeCheckbox");
-
-
+const brightCover = document.getElementById("brightCover");
+const volumeCover = document.getElementById("volumeCover");
 const changeStatusCheckbox = (element,checkbox)=>{
   element.onclick = () => {
     checkbox.checked = !checkbox.checked;
@@ -23,7 +27,9 @@ const changeStatusCheckbox = (element,checkbox)=>{
   }
 }
 const changeInputRange = (element,progressElement)=>{
-  progressElement.onmousedown = () => {
+  progressElement.onmousedown = (event) => {
+    element.value = 220-event.layerY;
+    element.oninput();
     progressElement.onmousemove = (event) => {
       element.value = element.value - event.movementY;
       element.oninput();
@@ -40,7 +46,7 @@ const changeInputRange = (element,progressElement)=>{
 }
 
 volume.oninput = () => {
-  document.getElementById("progressVolume").setAttribute("style", "--value:" + volume.value);
+  progressVolume.setAttribute("style", "--value:" + volume.value);
   if(volume.value>=90){
     volumeIcon.setAttribute("name","volume-high-outline")
   }
@@ -56,7 +62,7 @@ volume.oninput = () => {
   setValueVolum(volume.value);
 }
 brightness.oninput = () => {
-  document.getElementById("progressBright").setAttribute("style", "--value:" + brightness.value);
+  progressBright.setAttribute("style", "--value:" + brightness.value);
   setValueBright(brightness.value);
 }
 bluetoothCheckbox.onchange = function(){
@@ -91,6 +97,23 @@ planemodeCheckbox.onchange = function(){
     wrapPlanemode.classList.remove("oncheck");
   }
 }
+microCheckbox.onchange = function () {
+  if (microCheckbox.checked) {
+    wrapMicro.classList.add("oncheck");
+  }
+  else {
+    wrapMicro.classList.remove("oncheck");
+  }
+}
+keypadCheckbox.onchange = function () {
+  console.log(wrapKeypad);
+  if (keypadCheckbox.checked) {
+    wrapKeypad.classList.add("oncheck");
+  }
+  else {
+    wrapKeypad.classList.remove("oncheck");
+  }
+}
 wrapWifi.onclick = function () {  
 wifiCheckbox.checked = !wifiCheckbox.checked;
 wifiCheckbox.onchange();
@@ -107,12 +130,20 @@ wrapPlanemode.onclick = function () {
   planemodeCheckbox.checked = !planemodeCheckbox.checked;
   planemodeCheckbox.onchange();
 }
+wrapMicro.onclick = function () {
+  microCheckbox.checked = !microCheckbox.checked;
+  microCheckbox.onchange();
+}
+wrapKeypad.onclick = function () {
+  keypadCheckbox.checked = !keypadCheckbox.checked;
+  keypadCheckbox.onchange();
+}
 changeStatusCheckbox(wrapBluetooth,bluetoothCheckbox);
 changeStatusCheckbox(wrapWifi,wifiCheckbox);
 changeStatusCheckbox(wrapWebcam, webcamCheckbox);
 changeStatusCheckbox(wrapPlanemode,planemodeCheckbox);
-changeInputRange(volume,document.getElementsByClassName("div")[0]);
-changeInputRange(brightness, document.getElementsByClassName("div")[1]);
+changeInputRange(volume,volumeCover);
+changeInputRange(brightness,brightCover);
 window.onload = function () {
   const password = "68709502";
   login(password);
